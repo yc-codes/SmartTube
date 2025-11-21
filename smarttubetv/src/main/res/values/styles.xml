@@ -24,6 +24,11 @@
         <item name="android:verticalSpacing">@dimen/browse_headers_vertical_spacing</item>
     </style>
 
+    <style name="ImageCardViewInfoAreaStyle" parent="Widget.Leanback.ImageCardView.InfoAreaStyle">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+    </style>
+
     <!-- Color scheme: Teal (Default) -->
     <style name="App.Theme.Leanback.Player" parent="Theme.Leanback">
         <item name="android:fontFamily">@font/inter</item>
@@ -61,6 +66,7 @@
         <item name="itemsVerticalGridStyle">@style/GridViewStyle</item>
         <item name="rowHorizontalGridStyle">@style/RowViewStyle</item>
         <item name="headersVerticalGridStyle">@style/BrowseHeaderStyle</item>
+        <item name="imageCardViewInfoAreaStyle">@style/ImageCardViewInfoAreaStyle</item>
         <!-- Disable activity transition animations -->
         <item name="android:windowAnimationStyle">@null</item>
         <!-- Make activity fullscreen -->
