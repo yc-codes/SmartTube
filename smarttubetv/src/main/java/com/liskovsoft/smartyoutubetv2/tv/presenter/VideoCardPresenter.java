@@ -3,6 +3,7 @@ package com.liskovsoft.smartyoutubetv2.tv.presenter;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.util.Pair;
@@ -84,12 +85,18 @@ public class VideoCardPresenter extends LongClickPresenter {
         cardView.enableBadge(isBadgeEnabled());
         cardView.enableTitle(isTitleEnabled());
         cardView.enableContent(isContentEnabled());
+
+        TextView titleText = cardView.findViewById(R.id.title_text);
+        if (titleText != null) {
+            titleText.setTypeface(titleText.getTypeface(), Typeface.BOLD);
+        }
+
         updateCardBackgroundColor(cardView, false);
         return new ViewHolder(cardView);
     }
 
     private void updateCardBackgroundColor(ComplexImageCardView view, boolean selected) {
-        int textColor = selected ? mSelectedTextColor : mDefaultTextColor;
+        int textColor = mDefaultTextColor;
 
         // Both background colors should be set because the view's
         // background is temporarily visible during animations.
