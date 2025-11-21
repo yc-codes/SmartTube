@@ -30,7 +30,7 @@ jobs:
       run: ./gradlew assembleStstableDebug
 
     - name: Upload APKs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v5
       with:
         name: SmartTube-Debug-APKs
         path: smarttubetv/build/outputs/apk/ststable/debug/*.apk
