@@ -65,8 +65,10 @@ public final class ProgressBarManager {
         ProgressBar progressBarView = new ProgressBar(
                 rootView.getContext(), null, android.R.attr.progressBarStyleLarge);
         progressBarView.setIndeterminate(true);
-        progressBarView.setIndeterminateDrawable(
-                ContextCompat.getDrawable(rootView.getContext(), R.drawable.progress_large_holo));
+
+        // Set color to white/accent for better visibility on dark backgrounds
+        progressBarView.getIndeterminateDrawable().setColorFilter(
+                android.graphics.Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
 
         FrameLayout.LayoutParams progressBarParams = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,

@@ -89,15 +89,14 @@ public class VideoCardPresenter extends LongClickPresenter {
     }
 
     private void updateCardBackgroundColor(ComplexImageCardView view, boolean selected) {
-        int backgroundColor = selected ? mSelectedBackgroundColor : mDefaultBackgroundColor;
         int textColor = selected ? mSelectedTextColor : mDefaultTextColor;
 
         // Both background colors should be set because the view's
         // background is temporarily visible during animations.
-        view.setBackgroundColor(backgroundColor);
+        view.setBackgroundColor(android.graphics.Color.TRANSPARENT);
         View infoField = view.findViewById(R.id.info_field);
         if (infoField != null) {
-            infoField.setBackgroundColor(backgroundColor);
+            infoField.setBackgroundColor(android.graphics.Color.TRANSPARENT);
         }
 
         TextView titleText = view.findViewById(R.id.title_text);
